@@ -1,0 +1,14 @@
+conda create -n HO3D_env python=2.7
+pip install numpy matplotlib scikit-image transforms3d tqdm cython
+pip install opencv-python==4.2.0.32
+pip install comm==0.0.1 open3d==0.9.0
+pip install chumpy
+python setup_mano.py /home/cuong/Datasets/HO3D_v3/mano_v1_2
+
+conda activate HO3D_env
+
+python vis_HO3D.py /home/cuong/Datasets/HO3D_v3/HO3D_v3 /home/cuong/Datasets/HO3D_v3/YCB_Video_Models/models
+
+python vis_HO3D.py /home/cuong/Datasets/HO3D_v3/HO3D_v3 /home/cuong/Datasets/HO3D_v3/YCB_Video_Models/ -visType 'open3d'
+
+python vis_HO3D_Cuong.py /home/cuong/Datasets/HO3D_v3/HO3D_v3 /home/cuong/Datasets/HO3D_v3/YCB_Video_Models/models

@@ -229,6 +229,20 @@ if __name__ == '__main__':
 
             plt.show()
 
+            # create matplotlib window
+            fig = plt.figure(figsize=(2, 2))
+            figManager = plt.get_current_fig_manager()
+            #figManager.resize(*figManager.window.maxsize())
+            figManager.resize(1000, 1280)
+
+            # show 3D hand mesh
+            ax6 = fig.add_subplot(1, 1, 1, projection="3d")
+            if split=='train':
+                plot3dVisualize(ax6, handMesh, flip_x=False, isOpenGLCoords=True, c="r")
+            ax1.title.set_text('Hand Mesh')
+
+            plt.show()
+
         else:
             raise Exception('Unknown visualization type')
 
